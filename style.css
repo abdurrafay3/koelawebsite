@@ -1,0 +1,939 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button{
+    font-family: 'bigness';
+}
+
+body {
+    font-family: 'Heebo', sans-serif;
+}
+
+.container {
+    width: 100%;
+    padding: 0 20px;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* High z-index to keep it above other elements */
+    background-color: #e5fff4; /* Ensure the background color covers the content */
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    border: 3px solid black;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    background-color: inherit; /* Inherit the background color from the nav */
+}
+
+/* The rest of your existing CSS can remain as is */
+
+
+.navbar-logo {
+    height: 40px;
+    width: 70px;
+}
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.navbar-list li {
+    font-size: 18px;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.social-logo {
+    height: 40px;
+    width: 40px;
+    border: 2px solid black;
+    padding: 3px;
+    border-radius: 6px;
+}
+
+.koela-button {
+    font-family: 'bigness';
+    background-color: #007809;
+    border: 2px solid black;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 15px;
+    
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-logo {
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .navbar-list {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        width: 100%;
+        padding: 0;
+    }
+
+    .socials {
+        display: none;
+    }
+
+    .koela-button {
+        display: none;
+    }
+
+    .topleaves,
+    .koela-pic {
+        width: 80%;
+    }
+
+    .koela-pic {
+        margin-top: auto; /* Move the image downwards */
+        padding-bottom: 20px; /* Add padding at the bottom to create space */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-list li {
+        font-size: 16px;
+    }
+
+    .navbar-logo {
+        height: 30px;
+        width: 60px;
+    }
+
+    .navbar-list {
+        gap: 10px;
+    }
+
+    .topleaves,
+    .koela-pic {
+        width: 100%;
+    }
+
+    .koela-pic {
+        margin-top: auto; /* Move the image downwards */
+        padding-bottom: 40px; /* Add padding at the bottom to create more space */
+    }
+}
+
+@font-face {
+    font-family: 'bigness';
+    src: url(fonts/bignesss.ttf) format('truetype');
+}
+
+body {
+    font-family: 'bigness';
+    overflow-y: scroll;
+}
+
+.first-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spread between top and bottom */
+    padding-top: 60px; /* Add top padding to create space below the navbar */
+}
+
+.topleaves {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.koela-pic {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: -5px;
+    bottom:0;
+
+    @media (max-width:768px) {
+        bottom:-4.5vh;
+    }
+    @media (max-width:390px) {
+        bottom:-5.5vh;
+    }
+}
+
+
+
+@media (max-width:591px) {
+    .koela-pic{
+        padding-top: 40px;
+    }
+}
+
+/* Adjust the navbar styling */
+.navbar {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    border: 3px solid black;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgba(227, 255, 169, 1);
+    padding: 10px;
+    flex-wrap: wrap;
+    z-index: 3;
+    box-sizing: border-box;
+}
+.bottomleaves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1; /* Place the bottom leaves behind the koela pic */
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+.first-section{
+    background-color: #e3ffa9;
+}
+
+
+/* Keyframes for the marquee animation */
+
+.second-section{
+    background-color: #e3ffa9;
+    position: relative;
+    margin-top: -10px;
+    z-index: 3;
+    
+}
+.partners {
+    background-size: cover;
+    width: 100%;
+    margin-top: -70px; /* Overlap with the first section */
+    position: relative;
+    z-index: 1; /* Lower z-index to be below the marquee section */
+}
+
+.partners {
+    background-size: cover;
+    width: 100%;
+    margin-top: -80px; /* Overlap with the first section */
+    position: relative;
+    z-index: 2; /* Ensure it's above the second section and below the marquee section */
+}
+
+.marquee2-section {
+    position: relative;
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+    margin-top: -50px; /* Pull up to overlap with section 2 and section 3 */
+    z-index: 3; /* Ensure it's above the partners image */
+    overflow: hidden;
+}
+
+.marquee2 {
+    display: flex;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.marquee2-content img {
+    height: 100px; /* Adjust to desired image height */
+    width: auto;
+    margin-right: 20px; /* Adjust spacing */
+    position: relative;
+    z-index: 4; /* Ensure images are above everything else */
+}
+
+.third-section {
+    position: relative;
+    padding-top: 60px;
+    background-color: #79ab6b;
+    margin-top: -50px; /* Pull section 3 up to overlap with marquee */
+    z-index: 1; /* Ensure it's below the marquee and partners */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .partners {
+        margin-top: -30px; /* Adjust overlap for smaller screens */
+    }
+
+    .marquee2-section {
+        margin-top: -40px; /* Adjust to keep it positioned correctly */
+        height: 80px; /* Reduce height on mobile screens */
+    }
+
+    .marquee2-content img {
+        height: 60px; /* Adjust image height for mobile */
+        width: auto;
+        margin-right: 15px; /* Adjust spacing */
+    }
+
+    .third-section {
+        margin-top: -40px; /* Adjust third section overlap */
+    }
+}
+
+@media (max-width: 480px) {
+    .partners {
+        margin-top: -20px; /* Further adjust overlap for very small screens */
+    }
+
+    .marquee2-section {
+        margin-top: -30px; /* Further adjust to keep it positioned correctly */
+        height: 60px; /* Further reduce height on smaller screens */
+    }
+
+    .marquee2-content img {
+        height: 50px; /* Adjust image height for very small screens */
+        width: auto;
+        margin-right: 10px; /* Adjust spacing */
+    }
+
+    .third-section {
+        margin-top: -30px; /* Further adjust third section overlap */
+    }
+}
+.roadmap {
+    display: block;
+    margin: 0 auto;
+    width: 80%; /* Adjust this percentage to make the image smaller */
+    max-width: 1200px; /* Ensure the image doesn't get too large */
+    padding: 0; /* Remove padding to avoid extra spacing */
+    position: relative;
+    z-index: 2; /* Ensure it's beneath the roadmap-bottom */
+}
+
+.roadmap-bottom {
+    display: block;
+    margin: -5px auto 0; /* Slight negative margin to overlap without creating a gap */
+    width: 80%; /* Adjust this percentage to make the image smaller */
+    max-width: 1200px; /* Ensure the image doesn't get too large */
+    position: relative;
+    z-index: 3; /* Ensure it appears above roadmap */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .roadmap {
+        width: 90%; /* Slightly increase width for smaller screens */
+    }
+
+    .roadmap-bottom {
+        margin: -3px auto 0; /* Adjust the negative margin to reduce gap */
+        width: 90%; /* Adjust width for smaller screens */
+    }
+}
+@media (max-width:458px) {
+    .roadmap-bottom{
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .roadmap {
+        width: 95%; /* Further increase width for mobile screens */
+    }
+
+    .roadmap-bottom {
+        margin: -2px auto 0; /* Further adjust the negative margin */
+        width: 95%; /* Adjust width for mobile screens */
+    }
+}
+
+.fourth-section {
+    background-color: #b0d4fc;
+    padding: 20px 0;
+    text-align: center; /* Center the container */
+}
+
+.image-container {
+    position: relative; /* Enable positioning of the rocket image */
+    display: inline-block; /* Ensure container size is based on its content */
+}
+
+.tokenomics {
+    max-width: 100%;
+    width: 100%; /* Adjust width to control size */
+    max-width: 400px; /* Limit the maximum size */
+    display: block;
+    padding-bottom: 40px;
+    transform: translate(0%, 10%);
+    margin: 0 auto; /* Center the tokenomics image */
+}
+
+.rocket {
+    max-width: 100%;
+    width: 50%; /* Adjust width to control size */
+    max-width: 200px; /* Limit the maximum size */
+    position: absolute;
+    top: 50%; /* Vertically align with tokenomics */
+    left: 100%; /* Position it to the right of tokenomics */
+    transform: translate(10%, -50%); /* Adjust position to be slightly right and vertically aligned */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tokenomics {
+        width: 80%; /* Increase width to fill more space on smaller screens */
+        max-width: 300px; /* Adjust max-width for smaller screens */
+    }
+
+    .rocket {
+        width: 25%; /* Adjust width for smaller screens */
+        max-width: 150px; /* Adjust max-width for smaller screens */
+        transform: translate(15%, -50%); /* Adjust position for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .tokenomics {
+        width: 90%; /* Further increase width on very small screens */
+        max-width: 250px; /* Further adjust max-width for smaller screens */
+    }
+
+    .rocket {
+        display: none;
+        width: 20%; /* Further adjust width for very small screens */
+        max-width: 120px; /* Further adjust max-width for very small screens */
+        transform: translate(20%, -50%); /* Further adjust position */
+    }
+}
+.third-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Full width of the section */
+    height: 75px; /* Thickness of the line */
+    background-color: #b0d4fc; /* Color of the line matching the fourth section */
+    z-index: 2; /* Place it above the third section but below the fourth section */
+}
+
+.fifth-section {
+    background-color: #c89c5e;
+    padding: 40px 20px; /* Add some padding for better spacing */
+}
+
+.koelastory {
+    color: #e3ffa9;
+    text-align: center;
+    text-shadow:
+        -1px -1px 0 #000, /* top-left */
+        1px -1px 0 #000,  /* top-right */
+        -1px 1px 0 #000,  /* bottom-left */
+        1px 1px 0 #000;   /* bottom-right */
+    padding: 20px 40px;
+    border: 3px solid black;
+    border-radius: 20px 20px 0 0;
+    background-color: #8ab4c8;
+    font-size: 35px;
+}
+
+.flexy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.koela-description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px; /* Space between image and text */
+    padding: 20px;
+    border: 3px solid black;
+    border-radius: 10px;
+    background-color: #8ab4c8;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+        display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px; /* Space between image and text */
+    padding: 40px 20px;
+    border: 3px solid black;
+    border-radius: 30px;
+    background-color: #8ab4c8;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 20vw;
+    }
+}
+
+.koela-image {
+    width: 100%;
+    max-width: 400px; /* Adjust the size of the image */
+    height: auto;
+    border-radius: 10px;
+}
+
+.koela-text {
+    text-align: left;
+    max-width: 100%;
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.6;
+}
+
+.koela-text p {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.flexbro {
+    margin: 20px;
+    text-align: center;
+}
+
+.flexytext {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .koela-description {
+        flex-direction: column; /* Stack the image and text vertically on smaller screens */
+    }
+
+    .koela-image {
+        width: 100%; /* Take full width on smaller screens */
+        max-width: 300px; /* Adjust the max width for smaller screens */
+    }
+
+    .koela-text {
+        font-size: 18px;
+    }
+
+    .flexbro {
+        margin: 10px 20px; /* Reduce side margins on smaller screens */
+    }
+
+    .flexytext {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .koela-image {
+        width: 100%; /* Take full width on very small screens */
+        max-width: 250px; /* Further reduce the max width for very small screens */
+    }
+
+    .koela-text p {
+        font-size: 16px;
+    }
+
+    .flexbro {
+        margin: 10px 10px; /* Further reduce side margins on very small screens */
+    }
+
+    .flexytext {
+        font-size: 16px;
+    }
+}
+
+.footer {
+    background-color: #e3ffa9;
+    padding: 20px 10px; /* Adjusted padding for better spacing */
+    border-radius: 10px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column; /* Stack content on top of each other */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #e3ffa9;
+}
+
+.footer-text {
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 10px; /* Space between text and icons */
+    text-align: center; /* Center the text */
+}
+
+.footer-socials {
+    display: flex;
+    gap: 10px;
+    justify-content: center; /* Center the icons */
+}
+
+.footer-icon {
+    width: 40px; /* Adjusted size for better responsiveness */
+    height: 40px;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: #e3ffa9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 15px; /* Adjusted padding for medium screens */
+    }
+
+    .footer-text {
+        font-size: 17px; /* Adjusted font size for better readability */
+    }
+
+    .footer-icon {
+        width: 35px; /* Adjusted size for medium screens */
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 10px; /* Adjusted padding for small screens */
+    }
+
+    .footer-text {
+        font-size: 16px; /* Further adjust font size for small screens */
+    }
+
+    .footer-icon {
+        width: 30px; /* Further adjust size for small screens */
+        height: 30px;
+    }
+}
+
+
+body{
+    background-color: #e3ffa9;
+}
+
+.audio-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 50px;
+    background-color: #007809;
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.audio-control i {
+    font-size: 24px;
+}
+
+.audio-control:hover {
+    background-color: #005a07;
+}
+
+
+  
+.marquee {
+    width: 100%;
+    
+    /* background-color: #bb252d; */
+    background-color: #00974A;
+    color: white;
+    
+    line-height: 3;
+    font-family: MYFONT, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    padding: 50px 0px;
+    @media  (max-width: 768px) {
+        padding: 10px 0px;
+    }
+}
+
+.marquee p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 10s linear infinite;
+}
+
+.marquee.reverse p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee-reverse 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translate(-100%, 0);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes marquee-reverse {
+    0% {
+        transform: translate(0%, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+}
+  
+#textspecial{
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    font-size: 40px;
+    line-height: 2.5rem;
+    --tw-text-opacity: 1;
+    color: #00bfff;
+    text-shadow: -1px -1px 0 black,1px -1px 0 black,-1px 4px 0 black,3px 4px 0 black;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+    
+}
+
+.tokenomics-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.tokenomics-heading {
+    padding-top: 60px;
+    font-size: 48px;
+    color: #e3ffa9;
+    text-align: center;
+    text-shadow: 
+    3px 3px 0px black,  /* Bottom-right shadow */
+    -3px 3px 0px black, /* Bottom-left shadow */
+    3px -3px 0px black, /* Top-right shadow */
+    -3px -3px 0px black; /* Top-left shadow */
+}
+
+.tokenomics-container > div {
+    border: 4px solid black;
+    border-radius: 10px;
+    background-color: #e3ffa9;
+    margin: 15px;
+    width: 100%; /* Ensure divs take up full width */
+    max-width: 900px; /* Limit the width on larger screens */
+    text-align: center;
+}
+
+.tokenomics-p {
+    padding: 20px;
+    font-size: 24px;
+}
+
+@media (max-width: 768px) {
+    .tokenomics-heading {
+        font-size: 36px; /* Reduce heading size for smaller screens */
+    }
+
+    .tokenomics-container > div {
+        margin: 10px 0; /* Reduce margin for smaller screens */
+    }
+
+    .tokenomics-p {
+        padding: 15px;
+        font-size: 20px; /* Reduce font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .tokenomics-heading {
+        font-size: 28px; /* Further reduce heading size for very small screens */
+    }
+
+    .tokenomics-container > div {
+        margin: 8px 0; /* Further reduce margin for very small screens */
+    }
+
+    .tokenomics-p {
+        padding: 10px;
+        font-size: 18px; /* Further reduce font size for very small screens */
+    }
+}
+.htbcontainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.htb-heading {
+    padding-top: 60px;
+    font-size: 60px;
+    color: #e3ffa9;
+    text-align: center;
+    text-shadow: 
+    3px 3px 0px black,  /* Bottom-right shadow */
+    -4px 4px 0px black, /* Bottom-left shadow */
+    2px -2px 0px black, /* Top-right shadow */
+    -3px -3px 0px black; /* Top-left shadow */
+}
+.cloud1,
+.cloud2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow clouds to wrap on smaller screens */
+    gap: 20px; /* Increase spacing between the cloud images */
+}
+
+.cloudsolana {
+    margin: 20px;
+    max-width: 400px; /* Increase cloud image size */
+    height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .htb-heading {
+        font-size: 48px; /* Reduce heading size for smaller screens */
+    }
+
+    .cloudsolana {
+        max-width: 190px; /* Adjust cloud image size for smaller screens */
+        margin: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .htb-heading {
+        font-size: 36px; /* Further reduce heading size for very small screens */
+    }
+
+    .cloud1,
+    .cloud2 {
+        flex-direction: column; /* Stack cloud images in a single column */
+        align-items: center; /* Center the cloud images */
+    }
+
+    .cloudsolana {
+        max-width: 240px; /* Increase cloud image size for smaller screens */
+        margin: 15px;
+    }
+}
+.faq-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.faq-container {
+    border-top: 1px solid #ddd;
+}
+
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.faq-question {
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #f0f0f0;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 10px;
+}
+
+.faq-answer p {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.faq-question.active {
+    font-weight: bold;
+}
+
+.faq-question.active::after {
+    content: '-';
+    float: right;
+}
+
+.faq-question::after {
+    content: '+';
+    float: right;
+}
